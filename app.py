@@ -1,6 +1,3 @@
-# web app 共識
-
-# 網站其實就是一個伺服器 python主流:flask小規模架設伺服器;django大規模有畫面網頁
 from flask import Flask, request, abort
 
 from linebot import (
@@ -15,6 +12,9 @@ from linebot.models import (
 
 app = Flask(__name__)
 
+# web app 共識
+
+# 網站其實就是一個伺服器 python主流:flask小規模架設伺服器;django大規模有畫面網頁
 # tolen權杖 asses存取秘密 只有我可以操控這個機器人 高度加密元素 很難猜 
 line_bot_api = LineBotApi('X8+cXgsL+ZCMdQCvsX8NVnX4DphfDyI1j0sahpTAtoYLIDL9edQ0OyQ46kX1U/a5qFmFAMDz+kJ6/c+FeHPD4GaZPkUq7hGc9+dAIgHpClE+9yo2ADjRnuQ/Aje8yb//EAnbXMo/MJ4axyc96cMCfQdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('8698f8664c36024aad67198c780ea9cc')

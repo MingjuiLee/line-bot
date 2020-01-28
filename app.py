@@ -49,7 +49,7 @@ def handle_message(event):
     if msg == 'hi':
         r = 'hi'
     elif msg == '你吃飯了嗎':
-        r = 'not yet'
+    	r = 'not yet'
 
     line_bot_api.reply_message(
         event.reply_token, 

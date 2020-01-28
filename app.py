@@ -46,6 +46,18 @@ def handle_message(event):
     msg = event.message.text
     r = 'Sorry, what do you mean?'
 
+    if '給我貼圖' in msg:
+        sticker_message = StickerSendMessage(
+            package_id='1',
+            sticker_id='1'
+        )
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+
+        return  # 不return東西的return 結束function 不執行下面
+
     if msg in ['hi', 'Hi']:
         r = 'Hi'
     elif msg == 'Do you have meal?':
@@ -55,16 +67,11 @@ def handle_message(event):
     elif 'reserve' in msg:
         r = 'You want to reserve, right?'
 
-    # line_bot_api.reply_message(
-    #     event.reply_token,
-    #     TextSendMessage(text=r))
-
     line_bot_api.reply_message(
         event.reply_token,
-        StickerSendMessage(
-            package_id='1',
-            sticker_id='1'
-    ))
+        TextSendMessage(text=r))
+
+
 
 # main function: 寫這一行表示 如果這個app.py是直接被執行而不是被載入 才執行
 # 確保直接被執行 而不是被載入

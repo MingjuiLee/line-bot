@@ -44,10 +44,16 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    ｓ= '你吃飯了嗎'
+    r = '我看不懂你說什麼'
+
+    if msg == 'hi':
+        r = 'hi'
+    elif msg == '你吃飯了沒'：
+        r = 'not yet'
+
     line_bot_api.reply_message(
         event.reply_token, 
-        TextSendMessage(text=s))
+        TextSendMessage(text=r))
 
 # main function: 寫這一行表示 如果這個app.py是直接被執行而不是被載入 才執行
 # 確保直接被執行 而不是被載入
